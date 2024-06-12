@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a1e2e;
+  padding: 10px 20px;
+  color: white;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 20px;
+}
+
+.notificationCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+.bellIcon {
+  font-size: 20px;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  margin-right: 10px;
+}
+
+.profilePic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
