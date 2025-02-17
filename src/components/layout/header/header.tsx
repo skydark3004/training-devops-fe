@@ -1,7 +1,10 @@
+'use client';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { useUserContext } from '@/context';
 
 export const Header = () => {
+  const { dataContext } = useUserContext();
   return (
     <>
       <header className={styles.header}>
@@ -24,7 +27,7 @@ export const Header = () => {
             <img className={styles.avatar} src='/header/avatar-default.png' width={20} alt='avatar'></img>
           </Link>
           <span style={{ marginLeft: '20px' }} className={styles.userName}>
-            David Fucking Man
+            {dataContext?.fullName}
           </span>
         </div>
       </header>

@@ -21,7 +21,7 @@ import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMe
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  convertIdColumnToContent: any;
+  convertIdColumnToContent?: any;
 }
 
 export function DataTable<TData, TValue>({ columns, data, convertIdColumnToContent }: DataTableProps<TData, TValue>) {

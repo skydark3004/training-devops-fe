@@ -14,6 +14,22 @@ const nextConfig = {
     ignoreBuildErrors: true, //TODO: fix
   },
   reactStrictMode: false,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '9999',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.lathdev.site',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,4 +1,4 @@
 export const convertDefaultValueInputString = (value: string) => {
-  if (!value) return undefined;
-  return value;
+  if (!value?.trim()) return undefined;
+  return value.trim();
 };

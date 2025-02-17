@@ -3,7 +3,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 interface IInterceptor {
   request?: (config: any) => any;
-  response?: (config: any) => any;
+  response?: {
+    success: (response: any) => any;
+    error: (error: any) => any;
+  };
 }
 
 export class AxiosInstance {
@@ -23,56 +26,49 @@ export class AxiosInstance {
     if (interceptor?.request) {
       this.api.interceptors.request.use(interceptor?.request);
     }
+
+    if (interceptor?.response) {
+      this.api.interceptors.response.use(interceptor?.response.success, interceptor?.response?.error);
+    }
   }
 
-  get(url: string, config: AxiosRequestConfig = {}) {
+  async get(url: string, config: AxiosRequestConfig = {}): Promise<any> {
     const defaultConfig = {
       ...config,
     };
-    const request = this.api.get(url, defaultConfig).then(this.mapData).catch(this.mapError);
+    const request = await this.api.get(url, defaultConfig);
     return request;
   }
 
-  post(url: string, body: any, config = {}) {
+  async post(url: string, body: any, config = {}): Promise<any> {
     const defaultConfig = {
       ...config,
     };
-    const request = this.api.post(url, body, defaultConfig).then(this.mapData).catch(this.mapError);
+    const request = await this.api.post(url, body, defaultConfig);
     return request;
   }
 
-  put(url: string, body: any, config = {}) {
+  async put(url: string, body: any, config = {}): Promise<any> {
     const defaultConfig = {
       ...config,
     };
-    const request = this.api.put(url, body, defaultConfig).then(this.mapData).catch(this.mapError);
+    const request = await this.api.put(url, body, defaultConfig);
     return request;
   }
 
-  patch(url: string, body: any, config = {}) {
+  async patch(url: string, body: any, config = {}): Promise<any> {
     const defaultConfig = {
       ...config,
     };
-    const request = this.api.patch(url, body, defaultConfig).then(this.mapData).catch(this.mapError);
+    const request = await this.api.patch(url, body, defaultConfig);
     return request;
   }
 
-  _delete(url: string, config = {}) {
+  async _delete(url: string, config = {}): Promise<any> {
     const defaultConfig = {
       ...config,
     };
-    const request = this.api.delete(url, defaultConfig).then(this.mapData).catch(this.mapError);
+    const request = await this.api.delete(url, defaultConfig);
     return request;
-  }
-
-  mapData(res: any) {
-    return res.data;
-  }
-
-  mapError(err: any) {
-    //console.log('mapError::', err);
-    const responseError = err?.response?.data;
-    //throw new Error(responseError);
-    throw responseError;
   }
 }

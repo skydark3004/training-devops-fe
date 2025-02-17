@@ -1,7 +1,13 @@
-export enum PermissionEnum {
+export enum EnumPermission {
+  PACKAGE = 'PACKAGE',
   EMPLOYEE = 'EMPLOYEE',
   CUSTOMER = 'CUSTOMER',
   COURSE = 'COURSE',
-  PACKAGE = 'PACKAGE',
+  FAQ = 'FAQ',
+  TIP = 'TIP',
+  NOTIFCATION = 'NOTIFCATION',
   VOUCHER = 'VOUCHER',
+  PURCHASE = 'PURCHASE',
+  SETTING = 'SETTING',
+  FEEDBACK = 'FEEDBACK',
 }

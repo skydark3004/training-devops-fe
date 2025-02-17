@@ -1,0 +1,10 @@
+export enum EnumPrefix {
+  BANNER = 'BANNER',
+  GUIDE = 'GUIDE',
+  REEL = 'REEL',
+  VIDEO = 'VIDEO',
+  THUMBNAIL = 'THUMBNAIL',
+  AUDIO = 'AUDIO',
+  IMAGE_OF_AUDIO = 'IMAGE_OF_AUDIO',
+  IMAGE_OF_FLEX = 'IMAGE_OF_FLEX',
+}
