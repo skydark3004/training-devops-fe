@@ -8,7 +8,7 @@ environment=$1
 npm install
 npm run build
 
-cp /home/thangl-vietis/deploy-pm2-fe/.env-${environment} /home/thangl-vietis/deploy-pm2-fe/current/.env
+cp /home/thangl-vietis/deploy-fe-pm2/.env-${environment} /home/thangl-vietis/deploy-fe-pm2/current/.env
 
 
 cp -r public .next/standalone/
