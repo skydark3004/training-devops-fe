@@ -15,10 +15,6 @@ npm run build
 #cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js 
 #cp /home/thangl-vietis/deploy-fe-pm2/.env-${env} /home/thangl-vietis/deploy-fe-pm2/current/.env
 
-pwd 
-
-ls -a 
-
 cp -r public .next/standalone/ 
 cp -r .next/static .next/standalone/.next/ 
 pm2 startOrRestart ecosystem.config.js
