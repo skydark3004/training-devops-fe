@@ -10,6 +10,9 @@ npm run build
 
 cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js
 
+pwd
+
+ls
 
 cp -r public .next/standalone/
 cp -r .next/static .next/standalone/.next/
