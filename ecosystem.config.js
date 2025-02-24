@@ -21,6 +21,13 @@ module.exports = {
       max_restarts: 5,
       shutdown_with_message: true,
       time: true,
+
+      env_development: {
+        NEXT_PUBLIC_NODE_ENV: 'development',
+        NEXT_PUBLIC_KEY_ACCESS_TOKEN: 'accessToken',
+        PORT: 'root',
+        NEXT_PUBLIC_BASE_URL_BACK_END: 'secret',
+      },
     },
   ],
   deploy: {
