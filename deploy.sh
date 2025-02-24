@@ -7,6 +7,7 @@ environment=$1
 
 
 cp /home/thangl-vietis/deploy-fe-pm2/.env-${environment} /home/thangl-vietis/deploy-fe-pm2/current/.env
+cp /home/thangl-vietis/deploy-fe-pm2/.env-${env} /home/thangl-vietis/deploy-fe-pm2/current/.env
 
 npm install
 npm run build 
@@ -14,7 +15,7 @@ npm run build
 #wait  
 
 #cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js 
-#cp /home/thangl-vietis/deploy-fe-pm2/.env-${env} /home/thangl-vietis/deploy-fe-pm2/current/.env
+
 
 cp -r public .next/standalone/ 
 cp -r .next/static .next/standalone/.next/ 
