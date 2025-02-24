@@ -14,6 +14,8 @@ cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/th
 npm install
 npm run build 
 
+echo "pm2 startOrRestart ecosystem.${environment}.config.js --env ${environment}"
+
 #cp -r public .next/standalone/ 
 #cp -r .next/static .next/standalone/.next/ 
 pm2 startOrRestart ecosystem.${environment}.config.js --env ${environment}
