@@ -21,4 +21,4 @@ ls -a
 
 cp -r public .next/standalone/ 
 cp -r .next/static .next/standalone/.next/ 
-pm2 startOrRestart ecosystem.${environment}.config.js --env ${environment}
+pm2 startOrRestart ecosystem.config.js
