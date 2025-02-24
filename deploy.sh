@@ -8,6 +8,8 @@ environment=$1
 npm install
 npm run build
 
+wait  # Chờ tất cả các tiến trình con hoàn thành
+
 cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js
 
 pwd
