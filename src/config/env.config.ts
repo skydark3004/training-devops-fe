@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config({ path: `${__dirname}/../../.env` });
+
 const envConfig = {
   NODE_ENV: process.env.NODE_ENVIROMENT || 'local',
   BASE_URL_BACK_END: process.env.NEXT_PUBLIC_BASE_URL_BACK_END || 'http://localhost:9999',
