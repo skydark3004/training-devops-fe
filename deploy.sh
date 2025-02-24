@@ -6,17 +6,15 @@ export NVM_DIR="$HOME/.nvm"
 environment=$1
 
 npm install
-npm run build
+npm run build && \
 
-wait  # Chờ tất cả các tiến trình con hoàn thành
+cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js && \
 
-cp /home/thangl-vietis/deploy-fe-pm2/ecosystem.${environment}.config.js /home/thangl-vietis/deploy-fe-pm2/current/ecosystem.${environment}.config.js
+pwd && \
 
-pwd
+ls -a && \
 
-ls
-
-cp -r public .next/standalone/
-cp -r .next/static .next/standalone/.next/
+cp -r public .next/standalone/ && \
+cp -r .next/static .next/standalone/.next/ && \ 
 
 pm2 startOrRestart ecosystem.${environment}.config.js --env ${environment}
